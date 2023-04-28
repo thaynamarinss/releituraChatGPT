@@ -1,0 +1,310 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+   
+  }
+
+  /* Defina a largura e a cor da barra de rolagem */
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: #202123;
+}
+
+/* Defina a cor do track da barra de rolagem */
+::-webkit-scrollbar-track {
+  background-color: #202123#F8F8F8;
+}
+
+/* Defina a cor e o estilo do thumb da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background-color: #40414F;
+  border-radius: 10px;
+  border: 3px solid #202123;
+}
+
+/* Mudar a cor do thumb quando o mouse estiver em cima */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #999999;
+  }
+  .hidden {
+    display: none;
+  }
+  
+  /*DIV LATERAL ESQUERDA*/
+  #sidebar {
+    /*position: fixed;*/
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 16.5%;
+    height: 100vh;
+    color: white;
+    background-color: #202123;
+    box-shadow: 0 0 10px rgba(19, 8, 40, 0.6);
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    
+  }
+  
+  #sidebar ul {
+    color: white;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+  
+  #sidebar li {
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  #sidebar a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    border: none;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  #sidebar a:hover {
+    background-color: #343541;
+    border-radius: 5px;
+  }
+  
+  /*botoes da div lateral esquerda*/
+  #new-chat {
+    width: 100%;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #202123;
+    color: #fff;
+    border: solid;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: #555659;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  #new-chat:hover {
+    background-color: #343541;
+  }
+  
+  #new-chat i {
+    margin-right: 10px;
+    color: white;
+    
+  }
+  
+  #old-chats {
+    overflow-y: auto;
+  }
+  
+  /*parte inferior da sidebar*/
+  #bottom-div-sidebar {
+    border-top: 1px solid white;
+    padding-top: 10px;
+    margin-top: auto;
+  }
+  
+  .user-btn {
+    width: 100%;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #202123;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: auto;
+    text-align: left;
+  }
+  .user-btn i{
+    color: #ececf1; 
+    padding-right: 10px;
+    text-align: left;
+
+  }
+
+  .user-btn:hover{
+    background-color: #343541;
+    border-radius: 5px;
+  }
+
+  .user-options {
+
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; 
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+
+  }
+  
+  .user-options a {
+
+    display: block;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 5px;
+
+  }
+  
+  .user-btn:focus + .user-options {
+    display: block;
+  }
+  
+  /*conteudo principal*/
+  #content {
+    
+    flex: 1;
+    background-color:#343541;
+    height: 100vh;
+    width: 83.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px 0 50px;
+
+  }
+  #sidebar-toggle{
+    background-color: transparent ! important;
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+    color: #ececf1;
+    margin-top: 25px;
+
+  }
+  #content h1{
+    font-size: 2.25rem;
+    color: #ECECF1;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 80px;
+
+
+  }
+  
+  #sections {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    margin: auto;
+
+  }
+  
+  .section {
+    flex: 1;   
+    padding: 20px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+    
+  }
+  
+  .section h2 {
+    font-size: 1.125rem;
+    color: #ECECF1;
+    margin-bottom: 25px;
+    padding-top: 5px;
+
+  }
+
+ 
+  
+  .section ul {
+    margin: 0;
+    padding: 0;
+    
+    list-style: none;
+  }
+  
+  .section li {
+    width: 230px;
+    height: 64px;
+    margin-bottom: 10px;
+  }
+  
+  .section a {
+    display: inline-block;
+    padding: 10px;
+    background-color: #40414f;
+    color: #ECECF1;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    /*cursor: pointer;*/
+    transition: background-color 0.2s ease;
+  }
+  /*
+  .section a:hover {
+    background-color: #2c0144;
+  }
+  */
+  /*div que contem a textarea*/
+  #message-box { 
+    display: flex;
+    flex-direction: row;
+    background-color: #40414f;
+    width: 80%;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    resize: none;
+    margin: 20px 20px 40px 120px;
+    outline: none;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    margin-top: auto;
+    justify-content: space-between;
+    
+    
+  }
+
+  #send-button{
+    background-color: transparent ! important;
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+    color: #ececf1;
+    margin: 15px;
+  }
+  /*textarea id="message-input"*/
+
+  #message-input{
+    background-color: #40414f;
+    width: 80%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    resize: none;  
+    padding: 12px;
+    color: white;
+    font-size: 1.25em;
+
+  }
+  
+
+  
