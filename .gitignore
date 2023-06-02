@@ -1,0 +1,5 @@
+node_modules
+app.py
+package.json
+package-lock.json
+.vscode
