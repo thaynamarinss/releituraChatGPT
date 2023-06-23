@@ -2,14 +2,20 @@ const db = require('./config_db');  // Definindo o modelo User
 const Sequelize = require('sequelize');
 
 const User = db.define('User', {
-    username: {
+    user_id: {
+      type: Sequelize.STRING(255),
+      primaryKey: true,
+      allowNull: false
+    },
+    email: {
       type: Sequelize.STRING(50),
       allowNull: false
     },
-    password: {
+    username: {
       type: Sequelize.STRING(50),
       allowNull: false
     }
+
   },{
     tableName: 'users',
     timestamps: false 
@@ -19,7 +25,7 @@ const User = db.define('User', {
     try {
       const users = await User.findAll();
       users.forEach((user) => {
-        console.log(`Username: ${user.username}, Password: ${user.password}`);
+        console.log(`Username: ${user.username}, Email: ${user.email}`);
       });
     } catch (error) {
       console.error('Error retrieving users:', error);

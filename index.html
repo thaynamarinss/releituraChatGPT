@@ -9,20 +9,25 @@
     <script src="https://kit.fontawesome.com/520883a8e1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script  src="https://code.jquery.com/jquery-3.7.0.js"></script>    
-
+    <script src = "https://unpkg.com/jwt-decode/build/jwt-decode.js"> </script> <!-- para decodificar as informações de login do google-->
     <script defer src="script.js"></script> <!--defer carrega o script por ultimo-->
-  
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
   
   </head>
   <body>
     <!--- Tela de Login -->
     <div id="login-screen">
-      <h1>Login</h1>
-      <form id="login-form">
-        <input type="text" id="username-input" placeholder="Username" required>
-        <input type="password" id="password-input" placeholder="Password" required>
-        <button type="submit">Login</button>
-      </form>
+      <div id="login-principal">
+        <h1>Bem-vindo(a) ao WizardGPT!</h1>   
+        <!-- <form id="login-form">
+          <input type="text" id="username-input" placeholder="Username" required>
+          <input type="password" id="password-input" placeholder="Password" required>
+          <button type="submit">Login</button>          
+        </form> -->
+        <div id="buttonDiv"></div> 
+        
+      </div>
+
     </div>
 
     <!--- Tela Principal -->

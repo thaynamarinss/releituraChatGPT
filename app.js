@@ -12,13 +12,10 @@ const jsonParser = bodyParser.json();
 // Usando o jsonParser como middleware para todas as rotas
 app.use(jsonParser);
 
-// app.use(express.json());
-// app.use(jsonParser);
-
 //const db = require('./models/config_db'); /*importando arquivo que faz ligação com o db */
-
 const User = require('./models/User'); // Importe o modelo do usuário do seu projeto
-console.log('linha 13 ', User);
+
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
@@ -27,23 +24,33 @@ app.get('/script.js', (req, res) => {
     res.sendFile(path.join(__dirname, 'script.js'));
   });
   
-  console.log('linha 22 ');
 
-app.post('/login', (req, res) => {
-    console.log('blaaaaaaaaaaaaaaaaa');
-    //const { username, password } = req.body;
+
+  app.post('/login', (req, res) => { 
+    var user_id = req.body.user_id;
+    var email = req.body.email;
     var username = req.body.username;
-    var password = req.body.password;
-    
-    console.log('SE Username:', username); // Log de console para verificar se o username está sendo recebido corretamente
-    console.log('SE Password:', password);
-    
-    User.findOne({ where: { username: username, password: password } })
+    //var password = req.body.password;
+    console.log('Username:', username); 
+    console.log('email:', email);
+    console.log('user_id:', user_id);
+
+    User.findOne({ where: { user_id: user_id } })
         .then((user) => {
             if (user) {
+                // Usuário encontrado, retornar uma resposta de login bem-sucedido
                 res.status(200).json({ success: true });
             } else {
-                res.status(401).json({ success: false, message: 'Nome de usuário ou senha inválidos!' });
+                // Usuário não encontrado, realizar o cadastro
+                User.create({ user_id, email, username })
+                    .then(() => {
+                        // Usuário cadastrado com sucesso, retornar uma resposta indicando a entrada
+                        res.status(200).json({ success: true });
+                    })
+                    .catch((error) => {
+                        console.error('Erro ao criar usuário:', error);
+                        res.status(500).json({ success: false, message: 'Erro ao criar usuário.' });
+                    });
             }
         })
         .catch((error) => {
@@ -52,6 +59,28 @@ app.post('/login', (req, res) => {
         });
 });
 
+
+// app.post('/login', (req, res) => { 
+//     var user_id = req.body.user_id;
+//     var email = req.body.email;
+//     var username = req.body.username;
+//     var password = req.body.password;  //apagar  
+//     //console.log('SE Username:', username); 
+//     //console.log('SE Password:', password);
+    
+//     User.findOne({ where: { username: username, password: password } })
+//         .then((user) => {
+//             if (user) {
+//                 res.status(200).json({ success: true });
+//             } else {
+//                 res.status(401).json({ success: false, message: 'Nome de usuário ou senha inválidos!' });
+//             }
+//         })
+//         .catch((error) => {
+//             console.error('Ocorreu um erro durante a autenticação:', error);
+//             res.status(500).json({ success: false, message: 'Ocorreu um erro durante a autenticação.' });
+//         });
+// });
 
 
 
