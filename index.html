@@ -34,44 +34,26 @@
     <div id = "chat-screen" class="hidden">
       <div id="sidebar">
 
-          <button id="new-chat"><i class="fa-solid fa-plus"></i>New Chat</button>
+          <button id="new-chat" onclick="newChat()"><i class="fa-solid fa-plus"></i>New Chat</button>
 
-          <div id = "old-chats">  
-                  
+          <div id = "old-chats">      
               <ul>
-                  <li><a href="#">Menu 1</a></li>
-                  <li><a href="#">Menu 2</a></li>
-                  <li><a href="#">Menu 3</a></li>
-                  <li><a href="#">Menu 4</a></li>
-                  <li><a href="#">Menu 1</a></li>
-                  <li><a href="#">Menu 2</a></li>
-                  <li><a href="#">Menu 3</a></li>
-                  <li><a href="#">Menu 4</a></li>
-                  <li><a href="#">Menu 1</a></li>
-                  <li><a href="#">Menu 2</a></li>
-                  <li><a href="#">Menu 3</a></li>
-                  <li><a href="#">Menu 4</a></li>
-                  <li><a href="#">Menu 1</a></li>
-                  <li><a href="#">Menu 2</a></li>
-                  <li><a href="#">Menu 3</a></li>
-                  <li><a href="#">Menu 4</a></li>
-                  <li><a href="#">Menu 1</a></li>
-                  <li><a href="#">Menu 2</a></li>
-                  <li><a href="#">Menu 3</a></li>
-                  <li><a href="#">Menu 4</a></li>
+                                  <!--adiciona lista no script.js  -->
               </ul>
-
-
           </div>    
       
           
           <div id = "bottom-div-sidebar">
-              <button class="user-btn"><i class="fa-solid fa-trash-can fa-sm"></i>Clear conversations</button>
+              <button class="user-btn" onclick="clear_Convers()"><i class="fa-solid fa-trash-can fa-sm"></i>Clear conversations</button>
               <!-- Botao Usuario -->
               <div class="user-options">
-                  <a href="#">Sair</a>
+                  <a href="#" onclick="Sair_user()">Sair</a>
               </div>
-              <button class="user-btn" id="user-action"><i class="fa-solid fa-user fa-sm"></i>Nome do usuário</button>
+              <button class="user-btn" id="btn-profile">
+                <img id="profile-image">
+                <!-- <i class="fa-solid fa-user fa-sm"></i> -->
+                <span id="username"> </span>
+              </button>
               
 
           </div>      
@@ -84,34 +66,37 @@
       <section id="content">
           <button id="sidebar-toggle"><i class="fa-solid fa-bars fa-2xl"></i></button>
           <h1>WizardGPT</h1>
-          
+              <div id ='play-chat' class = "hidden">
+                <!-- conteudo criado no script.js           
+                -->
+              </div>
 
               <div id="sections">
                   <div class="section">
                       <i class="fa-solid fa-sun fa-lg" style="color: #ececf1;"></i>
                     <h2> Examples</h2>
                     <ul>
-                      <li><a>"Explain quantum computing in simple terms"</a></li>
-                      <li><a>"Got any creative ideas for a 10 year old’s birthday?"</a></li>
-                      <li><a>"How do I make an HTTP request in Javascript?"</a></li>                 
+                      <li><a onclick="updatePlaceholder('Expecto Patronum')" style="cursor: pointer;" >"Expecto Patronum"</a></li>
+                      <li><a onclick="updatePlaceholder('Avada Kedrava')" style="cursor: pointer;">"Avada Kedrava"</a></li>
+                      <li><a onclick="updatePlaceholder('Poção Polissuco')" style="cursor: pointer;">"Poção Polissuco"</a></li>                 
                     </ul>                 
                   </div>
                   <div class="section">
                     <i class="fa-solid fa-bolt fa-lg" style="color: #ececf1;"></i>
                     <h2>Capabilities</h2>
                     <ul>
-                      <li><a>Remembers what user said earlier in the conversation</a></li>
-                      <li><a>Allows user to provide follow-up corrections</a></li>
-                      <li><a>Trained to decline inappropriate requests</a></li>                 
+                      <li><a>Te envia várias curiosidades sobre o mundo bruxo</a></li>
+                      <li><a>Adivinha seu feiticio preferido</a></li>
+                      <li><a>Leva magia a lugares obscuros</a></li>                 
                     </ul> 
                   </div>
                   <div class="section">
                       <i class="fa-solid fa-triangle-exclamation fa-lg" style="color: #ececf1;"></i>
                     <h2>Limitations</h2>
                     <ul>
-                      <li><a>May occasionally generate incorrect information</a></li>
-                      <li><a>May occasionally produce harmful instructions</a></li>
-                      <li><a>Limited knowledge of world and events after 2021</a></li>                 
+                      <li><a>Não permite a entrada de trouxas</a></li>
+                      <li><a>Pode te enfeitiçar</a></li>
+                      <li><a>Não lhe envia uma carta para Hogwarts </a></li>                 
                     </ul> 
                   </div>
                 </div>
@@ -123,15 +108,7 @@
                       <i class="fa-solid fa-paper-plane"></i>
                   </button>
       
-              </div>
-            
-
-
-          
-            
-
-
-      
+              </div>      
 
       </section>
         

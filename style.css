@@ -9,7 +9,10 @@ html,body {
 .hidden{
   display: none !important ;
 }
-
+p{
+  color: white;
+  font-size: 20px;
+}
 
 
   /* Defina a largura e a cor da barra de rolagem */
@@ -51,14 +54,14 @@ html,body {
   #login-principal {
     background-color:rgba(38, 41, 72, 0.8);
     width: 420px;
-    height: 450px;
+    height: 300px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     color: white;
-    padding: 1%;
+    padding: 1.5%;
   }
   
 
@@ -170,9 +173,8 @@ html,body {
     color: #fff;
     border: none;
     font-size: 14px;
-    cursor: pointer;
-   
-    text-align: left;
+    cursor: pointer;   
+  /* text-align: left; */
   }
   .user-btn i{
     color: #ececf1; 
@@ -209,12 +211,23 @@ html,body {
     margin-bottom: 5px;
 
   }
+  #profile-image {
+    width: 30px; /* Defina o tamanho adequado para a imagem */
+    height: 30px;
+    border-radius: 30%; /* Para tornar a imagem circular, ajuste o valor conforme necessário */
+    margin-right: 10px; /* Adicione margem à direita para separar a imagem do nome do usuário */
+  }
   
+  #username {
+    flex: 1; /* Isso fará com que o nome do usuário ocupe o espaço restante disponível */
+    color: white;
+    text-align: left;
+  }
   /*conteudo principal*/
   #content {
     
     flex: 1;
-    background-color:#343541;
+    background-color:rgba(38, 41, 72);/*#343541;*/
     height: 100vh;
     width: 83.5%;
     display: flex;
@@ -242,6 +255,53 @@ html,body {
 
   }
   
+  #play-chat{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10% 0 10%;
+    padding: 0 1% 0 1%;
+    overflow: auto;
+  }
+  .system-message{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(132, 129, 134, 0.5); /* Vermelho com 50% de transparência */
+    border-radius: 5px;
+    padding: 0 1% 0 1%;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 7px 0 7px 0; 
+  }
+  .system-message img {
+    /* Posicionando a imagem absolutamente em relação à div .system-message */
+    top: 10px; /* Posição vertical da imagem */
+    right: 10px; /* Posição horizontal da imagem */
+    width: 60px; /* Largura da imagem */
+    height: 60px; /* Altura da imagem */
+    margin-left: 20px;
+   
+  }
+
+  .user-message{
+    display: flex;
+    flex-direction: row;    
+    border-radius: 5px;
+    padding: 0 1% 0 1%;
+    margin: 7px 0 7px 0;
+    align-items: center;
+    /* justify-content: space-between; */
+  }
+  .user-message img {
+    /* Posicionando a imagem absolutamente em relação à div .system-message */
+    top: 10px; /* Posição vertical da imagem */
+    right: 10px; /* Posição horizontal da imagem */
+    width: 60px; /* Largura da imagem */
+    height: 60px; /* Altura da imagem */
+    margin-right: 20px;
+    border-radius: 10%;
+   
+  }
+
   #sections {
     display: flex;
     flex-direction: row;
@@ -289,6 +349,9 @@ html,body {
   .section a {
     display: inline-block;
     padding: 10px;
+    width: 200px;
+    height: 35px;
+    text-align: center;
     background-color: #40414f;
     color: #ECECF1;
     text-decoration: none;
